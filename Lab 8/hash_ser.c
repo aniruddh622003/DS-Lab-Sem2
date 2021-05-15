@@ -70,8 +70,10 @@ void print_table(){
 
 int main(){
     srand(time(0));
-
-    for (int i = 0; i < 40; i++)
+    printf("Number of elements to insert: ");
+    int n;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
     {
         insert(rand() % 100);
     }
@@ -79,6 +81,7 @@ int main(){
     char choice;
     printf("Sample data inserted..\n\n");
     while(1){
+        while((getchar()) != '\n');
         printf("Do you want to search data (y/n): ");
         
         scanf("%c", &choice);
@@ -86,9 +89,9 @@ int main(){
         {
         case 'y':
             printf("Enter number you want to search (0-100): ");
-            int sap;
-            scanf("%d", &sap);
-            search(sap);
+            int data;
+            scanf("%d", &data);
+            search(data);
             break;
         
         case 'n':
@@ -99,7 +102,7 @@ int main(){
             printf("Invalid selection.\n");
             break;
         }
-        while((getchar()) != '\n');        
+                
     }
     Exit_1:printf("\n");
     
